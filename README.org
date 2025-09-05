@@ -19,7 +19,7 @@ python confluence_erase_attachments.py  delete my_file.qmd   --no-dry-run
 
 and it should delete the files.
 
-you can also provide the authorization info in the cli:
+You can also provide the authorization info in the cli:
 #+begin_src bash
 python confluence_erase_attachments.py  delete my_file.qmd  --email $CONFLUENCE_EMAIL --token $CONFLUENCE_API_TOKEN --base-url $CONFLUENCE_BASE_URL
 #+end_src
