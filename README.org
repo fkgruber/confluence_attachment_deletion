@@ -1,5 +1,5 @@
 #+title: Confluence page attachment deletion
-* Introductin
+* Introduction
 This script remove all attachment on the specified confluence page. It is intended to be used together with quarto publish confluence since it requires the _publish.yml file.
 * Python requirements
 - typer
