@@ -1,0 +1,30 @@
+#+title: Confluence page attachment deletion
+* Introductin
+This script remove all attachment on the specified confluence page. It is intended to be used together with quarto publish confluence since it requires the _publish.yml file.
+* Python requirements
+- typer
+- requests
+* Usage
+The easier usage is to put your email, token, and base url on environmental variables. then you can do
+#+begin_src bash
+python confluence_erase_attachments.py  delete my_file.qmd
+#+end_src
+
+to get the list of files that would be deleted.
+
+When you are ready to delete the files you can do
+#+begin_src bash
+python confluence_erase_attachments.py  delete my_file.qmd   --no-dry-run
+#+end_src
+
+and it should delete the files.
+
+you can also provide the authorization info in the cli:
+#+begin_src bash
+python confluence_erase_attachments.py  delete my_file.qmd  --email $CONFLUENCE_EMAIL --token $CONFLUENCE_API_TOKEN --base-url $CONFLUENCE_BASE_URL
+#+end_src
+
+There is also a command to list files attached to the page
+#+begin_src bash
+python confluence_erase_attachments.py  delete my_file.qmd
+#+end_src
