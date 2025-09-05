@@ -140,10 +140,10 @@ def list_cmd(
         typer.echo("No attachments found.")
         raise typer.Exit()
     w = max(len(a["title"]) for a in atts)
-    typer.echo(f"{'ID':<12}  {'Title':<{min(60,max(20,min(w,60)))}}  {'Size':>9}  {'Type':<24}  Ver  Creator")
+    typer.echo(f"{'ID':<12}  {'Title':<{min(60,max(20,min(w,60)))}}  {'Size':>50}  {'Type':<24}  Ver    Creator    Updated")
     for a in atts:
         title = a["title"] if len(a["title"])<=60 else a["title"][:57]+"..."
-        typer.echo(f"{a['id']:<12}  {title:<60}  {human(a['fileSize']):>9}  {str(a['mediaType'])[:24]:<24}  {str(a['version']):>3}  {a['creator']}")
+        typer.echo(f"{a['id']:<12}  {title:<60}  {human(a['fileSize']):>9}  {str(a['mediaType'])[:24]:<24}  {str(a['version']):>3}  {a['creator']} {a['created']}")
 
 @app.command("delete", help="Delete attachments on the mapped page (dry-run by default)")
 def delete_cmd(
